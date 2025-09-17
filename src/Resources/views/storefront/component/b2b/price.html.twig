@@ -1,0 +1,22 @@
+{#{% if page.product %}#}
+{#    #}{# Detailseite #}
+{#    {{ page.product.price.first.listPrice.gross|currency }}#}
+{#{% elseif real is defined %}#}
+{#    #}{# Starsteite #}
+{#    {% if 'customfield' == config('EcobrotboxB2B.config.replacePriceWith') %}#}
+{#            {% if product.customFields.manuellprodukt_1 %}#}
+{#                {{ product.customFields.manuellprodukt_1 }}#}
+{#            {% endif %}#}
+{#    {% else %}#}
+{#        <a href="{{ path('frontend.account.login.page') }}">{{ "ecobrotbox.b2b.pricereplaced"|trans }}</a>#}
+{#    {% endif %}#}
+{#    {{ dump(real.listPrice.price|currency) }}#}
+{#{% endif %}#}
+
+{% if 'customfield' == config('EcobrotboxB2B.config.replacePriceWith') %}
+    {% if product.customFields.manuellprodukt_1 %}
+        {{ product.customFields.manuellprodukt_1 }}
+    {% endif %}
+{% else %}
+    <a href="{{ path('frontend.account.login.page') }}">{{ "ecobrotbox.b2b.pricereplaced"|trans }}</a>
+{% endif %}

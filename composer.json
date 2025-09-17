@@ -1,0 +1,23 @@
+{
+  "name": "ecobrotbox/b2b-plugin",
+  "description": "Ecobrotbox B2B Plugin",
+  "type": "shopware-platform-plugin",
+  "version": "v1.0.3",
+  "license": "proprietary",
+  "require": {
+    "shopware/core": "6.7.*",
+    "shopware/storefront": "6.7.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "EcobrotboxB2B\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "EcobrotboxB2B\\EcobrotboxB2B",
+    "label": {
+      "de-DE": "Ecobrotbox B2B",
+      "en-GB": "Ecobrotbox B2B"
+    }
+  }
+}

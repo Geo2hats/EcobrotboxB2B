@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_form_inner %}
+    {% if page.EcobrotboxB2B.blockCheckout is not defined or page.EcobrotboxB2B.blockCheckout is false %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

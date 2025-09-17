@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Registration: Private Customers</title>
+        <title lang="de-DE">Registrierung: Privatpersonen</title>
+
+        <input-field type="bool">
+            <name>deactivatePrivateRegistrations</name>
+            <label>Deactivate private registration</label>
+            <label lang="de-DE">Private Registrierung deaktivieren</label>
+            <label lang="en-EN">Deactivate private registration</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>privateDeactivateAccount</name>
+            <label>Deactivate account after registration</label>
+            <label lang="de-DE">Konto nach der Registrierung deaktivieren</label>
+            <label lang="en-EN">Deactivate account after registration</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <component name="sw-entity-single-select">
+            <name>privateNewCustomerGroup</name>
+            <entity>customer_group</entity>
+            <label>Assign new customer group</label>
+            <label lang="de-DE">Neuer Kundengruppe zuweisen</label>
+            <label lang="en-EN">Assign new customer group</label>
+        </component>
+
+        <component name="sw-entity-single-select">
+            <name>privateRequestNewCustomerGroup</name>
+            <entity>customer_group</entity>
+            <label>Request new customer group assignment</label>
+            <label lang="de-DE">Zuweisung zu neuer Kundengruppe beantragen</label>
+            <label lang="en-EN">Request new customer group assignment</label>
+            <helpText lang="en-EN">Request needs manual approval</helpText>
+            <helpText lang="de-DE">Antrag muss manuell akzeptiert werden</helpText>
+        </component>
+
+    </card>
+
+    <card>
+        <title>Registration: Business Customers</title>
+        <title lang="de-DE">Registrierung: Unternehmen</title>
+
+        <input-field type="bool">
+            <name>businessDeactivateAccount</name>
+            <label>Deactivate account after registration</label>
+            <label lang="de-DE">Konto nach der Registrierung deaktivieren</label>
+            <label lang="en-EN">Deactivate account after registration</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <component name="sw-entity-single-select">
+            <name>businessNewCustomerGroup</name>
+            <entity>customer_group</entity>
+            <label>Assign new customer group</label>
+            <label lang="de-DE">Neuer Kundengruppe zuweisen</label>
+            <label lang="en-EN">Assign new customer group</label>
+        </component>
+
+        <component name="sw-entity-single-select">
+            <name>businessRequestNewCustomerGroup</name>
+            <entity>customer_group</entity>
+            <label>Request new customer group assignment</label>
+            <label lang="de-DE">Zuweisung zu neuer Kundengruppe beantragen</label>
+            <label lang="en-EN">Request new customer group assignment</label>
+            <helpText lang="en-EN">Request needs manual approval</helpText>
+            <helpText lang="de-DE">Antrag muss manuell akzeptiert werden</helpText>
+        </component>
+
+    </card>
+
+    <card>
+        <title>Settings</title>
+        <title lang="de-DE">Einstellungen</title>
+
+        <component name="sw-entity-multi-id-select">
+            <name>shopAllowedForCustomerGroups</name>
+            <entity>customer_group</entity>
+            <label>Limit shop to registred customers of the following groups</label>
+            <label lang="de-DE">Beschränke den Shop auf registrierte Kunden in den folgenden Kundengruppen</label>
+            <label lang="en-EN">Limit the shop to registred customers of the following groups</label>
+            <helpText lang="en-EN">With this option you disable everything except the frontpage and the account for unregistred customers and customers in not selected customer groups.</helpText>
+            <helpText lang="de-DE">Mit dieser Option schließen Sie den gesamten Shop ex und Kunden nicht ausgewählter Kundengruppen aus.</helpText>
+        </component>
+
+        <component name="sw-entity-multi-id-select">
+            <name>showPricesForCustomerGroups</name>
+            <entity>customer_group</entity>
+            <label>Only display prices to registred customers in the following groups</label>
+            <label lang="de-DE">Nur registrierten Benutzern der folgenden Kundengruppen die Preise anzeigen</label>
+            <label lang="en-EN">Only display prices to registred customers in the following groups</label>
+            <helpText lang="en-EN">If prices are hidden the checkout is automaticly disabled</helpText>
+            <helpText lang="de-DE">Wenn Preise versteckt werden, wird der Checkout automatisch blockiert.</helpText>
+        </component>
+
+        <input-field type="single-select">
+            <name>replacePriceWith</name>
+            <label>Replace Price with</label>
+            <label lang="de-DE">Den Preis ersetzen durch</label>
+            <label lang="en-EN">Replace Price with</label>
+            <placeholder>Snippet "Price after login"</placeholder>
+            <placeholder lang="de-DE">Textbaustein "Preis nach Login"</placeholder>
+            <placeholder lang="en-EN">Snippet "Price after login"</placeholder>
+            <options>
+                <option>
+                    <id>snippet</id>
+                    <name>Snippet</name>
+                    <name lang="de-DE">Textbaustein</name>
+                    <name lang="en-EN">Snippet</name>
+                </option>
+                <option>
+                    <id>customfield</id>
+                    <name>Custom Field</name>
+                    <name lang="de-DE">Zusatzfeld</name>
+                    <name lang="en-EN">Custom Field</name>
+                </option>
+            </options>
+        </input-field>
+
+        <component name="sw-entity-multi-id-select">
+            <name>checkoutAllowedForCustomerGroups</name>
+            <entity>customer_group</entity>
+            <label>Limit checkout to registred customers of the following groups</label>
+            <label lang="de-DE">Beschränke den Checkout auf registrierte Kunden in den folgenden Kundengruppen</label>
+            <label lang="en-EN">Limit checkout to registred customers of the following groups</label>
+            <helpText lang="en-EN">With this option you disable the checkout for unregistred customers and customers in not selected customer groups.</helpText>
+            <helpText lang="de-DE">Mit dieser Option schließen Sie u.a. Gastbestellungen und Kunden nicht ausgewählter Kundengruppen aus.</helpText>
+        </component>
+
+    </card>
+
+</config>

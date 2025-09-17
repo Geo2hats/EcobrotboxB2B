@@ -1,0 +1,14 @@
+{
+  "ecobrotbox": {
+    "b2b": {
+      "registration": {
+        "deactivated": "Your account has been deactivated and needs to be manuelly reviewed by an administrator.",
+        "grouprequest": "Your registration needs to be approved by an administrator."
+      },
+      "checkout": {
+        "blocked": "The checkout is only available to specific customer groups."
+      },
+      "pricereplaced": "Price after login"
+    }
+  }
+}

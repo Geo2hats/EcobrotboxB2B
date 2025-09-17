@@ -1,0 +1,27 @@
+{% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
+
+{% block component_address_personal_company %}
+
+	{% if config('EcobrotboxB2B.config.deactivatePrivateRegistrations') %}
+
+		<div id="deactivate-pr">
+        <input hidden id="deactivate-pr-value" value="{{ constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS') }}" />
+			{{ parent() }}
+		</div>
+
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+let typeBox = document.getElementById('accountType');
+console.log(typeBox);
+typeBox.parentElement.setAttribute('style', 'display: none !important;');
+typeBox.parentNode.setAttribute('style', 'display: none !important;');
+typeBox.value ='{{ constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS') }}'
+typeBox.dispatchEvent(new Event('change'));
+}, false);
+		</script>
+
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+{% endblock %}

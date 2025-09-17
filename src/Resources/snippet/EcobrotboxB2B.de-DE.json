@@ -1,0 +1,14 @@
+{
+  "ecobrotbox": {
+    "b2b": {
+      "registration": {
+        "deactivated": "Ihr Benutzerkonto wurde deaktiviert und muss von einem Administrator freigeschaltet werden.",
+        "grouprequest": "Ihre Anmeldung muss erst durch einen Administrator freigeschaltet werden."
+      },
+      "checkout": {
+        "blocked": "Ein Bestellabschluss ist nur für bestimmte Kundengruppen möglich."
+      },
+      "pricereplaced": "Preis nach Anmeldung"
+    }
+  }
+}
