@@ -6,6 +6,7 @@ namespace EcobrotboxB2B\Subscriber;
 
 use Shopware\Core\Checkout\Customer\CustomerEntity;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Shopware\Core\Framework\Struct\Struct;
 use Shopware\Storefront\Event\StorefrontRenderEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -59,7 +60,7 @@ class DisableFunctions implements EventSubscriberInterface
   
         $parameters = $event->getParameters();
         $page = $parameters['page'] ?? null;
-        if (empty($page)) {
+        if (!$page instanceof Struct) {
             return;
         }
 
